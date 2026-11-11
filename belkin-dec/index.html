@@ -181,7 +181,7 @@ details.how b{color:var(--fg)}
 .results .lead{color:rgba(255,255,255,.88)}
 .metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:30px}
 .metric{background:rgba(255,255,255,.14);border-radius:28px;padding:20px 22px}
-.metric .v{font-family:var(--num);font-weight:900;font-size:clamp(40px,4.5vw,58px);line-height:1}
+.metric .v{font-family:var(--num);font-weight:900;font-size:clamp(34px,3.4vw,50px);line-height:1;overflow-wrap:anywhere}
 .metric .l{font-size:17px;margin-top:6px}
 .metric .d{font-size:14px;opacity:.85;margin-top:2px}
 .calc{margin-top:22px;background:#fff;color:var(--zm-oxford);border-radius:28px;padding:22px 24px;display:grid;grid-template-columns:auto 1fr auto;gap:14px 24px;align-items:center}
@@ -272,7 +272,41 @@ label.f input[type=color]{padding:2px;height:40px}
 .pl td{padding:6px 6px;border-bottom:1px solid var(--line);text-align:left}
 .pl input{background:var(--input);border:1px solid var(--input-line);border-radius:8px;padding:6px 8px;font-size:15px;width:100%;color:var(--fg)}
 .banner{background:var(--zm-champagne-pink);color:var(--zm-oxford);border-radius:18px;padding:12px 16px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:16px}
-.newopt{display:flex;gap:6px;margin-top:6px}.newopt input{flex:1}
+.newopt{display:flex;gap:6px;margin-top:6px}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px;align-items:center}
+.fchip{border:2px solid var(--line);background:var(--surface);color:var(--fg);border-radius:999px;padding:7px 14px;font-weight:800;cursor:pointer;font-size:15px;font-family:inherit}
+.fchip small{font-weight:600;color:var(--muted);margin-left:8px;font-size:13px}
+.fchip[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}.fchip[aria-pressed="true"] small{color:inherit;opacity:.8}
+.fchip:hover{border-color:var(--fg)}
+.sortl{margin-left:auto;font-size:15px;color:var(--muted);display:inline-flex;gap:8px;align-items:center}
+.sortl select{background:var(--surface);border:2px solid var(--line);border-radius:999px;padding:6px 12px;font-weight:700;color:var(--fg)}
+.ad2{background:var(--surface);border:1px solid var(--line);border-top:6px solid var(--ac);border-radius:22px;overflow:hidden;transition:transform .15s ease,box-shadow .15s ease}
+.ad2:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,0,30,.08)}
+.ad2 header{display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;padding:18px 22px 8px}
+.ad2 .num{width:44px;height:44px;border-radius:50%;background:var(--ac);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--num);font-weight:900;font-size:22px}
+.ad2 h3{font-size:24px}
+.ad2 .out{text-align:right}.ad2 .out .v{font-family:var(--num);font-weight:900;font-size:40px;line-height:1;color:var(--ac)}.ad2 .out .l{font-size:15px;color:var(--muted)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px;padding:8px 22px 4px}
+.kpi{background:var(--soft);border-radius:14px;padding:10px 14px}
+.kpi .v{font-family:var(--num);font-weight:900;font-size:26px;line-height:1.1}
+.kpi .l{font-size:14px;color:var(--muted);line-height:1.3;margin-top:2px}
+.kpi.hl{background:var(--zm-saffron);color:var(--zm-oxford)}.kpi.hl .l{color:var(--zm-oxford)}
+.svis{margin:10px 22px 0;padding:14px 16px;border-radius:14px;border:1px dashed var(--line)}
+.svh{font-weight:800;margin-bottom:6px}
+.svrow{display:grid;grid-template-columns:170px 1fr 150px;gap:12px;align-items:center;font-size:15px;margin:6px 0}
+.svtrack{height:14px;background:var(--soft);border-radius:999px;overflow:hidden}.svtrack i{display:block;height:100%;border-radius:999px;transition:width .6s ease}
+.svv{text-align:right;color:var(--muted)}.svv b{color:var(--fg)}
+.ad2 .meta{display:flex;flex-wrap:wrap;gap:4px 20px;font-size:15px;color:var(--muted);padding:10px 22px 0}.ad2 .meta b{color:var(--fg)}
+.ad2 details.how{padding:0 22px 16px}
+.metric.hl{background:var(--zm-saffron);color:var(--zm-oxford)}
+.is-hidden{display:none!important}
+@media (max-width:700px){.kpis{grid-template-columns:repeat(2,1fr)}.kpi .v{font-size:22px}.ad2 header{grid-template-columns:auto 1fr}.ad2 .out{grid-column:1/-1;text-align:left}.svrow{grid-template-columns:1fr 90px}.svrow .svtrack{grid-column:1/-1;grid-row:2}.sortl{margin-left:0}}
+.mets{margin-top:14px;border-top:1px dashed var(--line);padding-top:12px}
+.mets-h{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap;margin-bottom:8px}
+.met{display:grid;grid-template-columns:1.4fr 1fr .8fr 90px auto;gap:8px;align-items:center;margin-bottom:8px}
+.met input,.met select{background:var(--input);border:1px solid var(--input-line);border-radius:10px;padding:7px 9px;font-size:15px;color:var(--fg);min-width:0;width:100%}
+.met .mv{font-weight:800;font-size:15px}
+@media (max-width:700px){.met{grid-template-columns:1fr 1fr}.met .mv{grid-column:1}}.newopt input{flex:1}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
 .chip2{display:inline-flex;align-items:center;gap:4px;background:var(--soft);border-radius:999px;padding:4px 6px 4px 12px;font-size:15px;color:var(--fg)}
 .chip2 button{border:0;background:transparent;color:var(--muted);cursor:pointer;font-size:16px;line-height:1;padding:2px 6px;border-radius:999px}
@@ -296,7 +330,7 @@ label.f input[type=color]{padding:2px;height:40px}
 </head>
 <body>
 <div id="app"></div>
-<script id="plan-data" type="application/json">{"campaign":{"name":"","supplier":"Belkin","retailer":"zoommer","start":"2026-12-01","end":"2027-01-04","currency":"USD","supplierShare":0.7,"taxPct":0,"partnerLogo":"data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDEuNjAzNjQgMjguNzcwMzMiPgogIDxkZWZzPgogICAgPHN0eWxlPgogICAgICAuY2xzLTEgewogICAgICAgIGZpbGw6IG5vbmU7CiAgICAgIH0KICAgIDwvc3R5bGU+CiAgPC9kZWZzPgogIDxwYXRoIGQ9Ik05Ny4wNzUxLDE3LjE5MTA3djEwLjI3NmgtNC45MTR2LTEwLjI3NmMwLTIuNzcxLTEuMDc1LTQuNDY3LTMuNzU2LTQuNDY3LTIuNjgsMC0zLjc1MiwxLjY5Ni0zLjc1Miw0LjQ2N3YxMC4yNzZoLTQuOTE1di0xMC4yNzZjMC01LjcyMSwyLjk0OC05LjAyNiw4Ljc1Ny05LjAyNiw1LjcxOS0uMDAxLDguNTgsMy4yMTcsOC41OCw5LjAyNm0tNzYuNjczLjg5M2E5LjM4MTYsOS4zODE2LDAsMCwxLTguOTEwNzIsOS44M3EtLjQ1ODg3LjAyMjUxLS45MTgyOCwwQTkuNTI2MDgsOS41MjYwOCwwLDAsMSwuNjU0LDE4Ljc5NzlxLS4wMTctLjQwMjI0LjAwMDA4LS44MDQ4M1YxLjczMTA3aDQuOTE2djkuMDI0YTcuNzU2NTMsNy43NTY1MywwLDAsMSw1Ljg5Ny0yLjUwMmM1LjM2MS0uMDg5LDguOTM1LDMuOTMzLDguOTM1LDkuODMxbS01LjAwNCwwYTQuOTkwNTIsNC45OTA1MiwwLDAsMC00LjY5OTU0LTUuMjY1NDNxLS4xMDc2NC0uMDA2MS0uMjE1NDYtLjAwNzU3YTUuMDQ0MjQsNS4wNDQyNCwwLDAsMC00LjkxNzcyLDUuMTY3NjVxLjAwMTMyLjA1MjcuMDAzNzIuMTA1MzVBNC45ODkxNiw0Ljk4OTE2LDAsMCwwLDEwLjI2OCwyMy4zNDc1M3EuMTA3NDcuMDA2MDkuMjE1MTMuMDA3NTRhNC45ODc4Myw0Ljk4NzgzLDAsMCwwLDQuOTIyNjUtNS4wNTIxNXEtLjAwMTQzLS4xMDk1LS4wMDc2NS0uMjE4ODVtMjYuMDA1LjM1N2E4LjYzNjcyLDguNjM2NzIsMCwwLDEtLjA5LDEuNTJoLTE0LjAzYy4yNjksMi4zMjQsMi40MTQsMy44NDIsNS4wMDUsMy44NDJhNi44MTEyMyw2LjgxMTIzLDAsMCwwLDQuOTE1LTEuNzg3bDIuNTAyLDMuMzk2YTExLjcwNjEsMTEuNzA2MSwwLDAsMS03LjQxNywyLjUwM2MtNS45ODgsMC0xMC4wMDktMy45MzQtMTAuMDA5LTkuNzQyQTkuNjYwNzEsOS42NjA3MSwwLDAsMSwzMS41ODU5MSw4LjE3MXEuMjE2NTEtLjAwNzguNDMzMi0uMDA1ODhjNS44OTgtLjAwMSw5LjM4NCwzLjg0Myw5LjM4NCwxMC4yNzZtLTUuMDA1LTIuMDU2Yy0uMzU3LTIuMzIxLTEuNzg3LTQuMTA4LTQuNTU4LTQuMTA4YTQuNDQwNzcsNC40NDA3NywwLDAsMC00LjU1OCw0LjEwOFptNy41OTUsMTAuOTkxaDQuOTE1VjEuNzMxMDdoLTQuOTE1Wm0yNS42NDgtMTguNTg3aC01LjcyMWwtNi42MSw4LjIyMVYxLjczMTA3aC00LjkxNXYyNS43MzZoNC45MTV2LTguOTM2bDYuNjEsOC45MzdoNS45ODlsLTcuNTk2LTEwLjA5OFptMi4xNDMsMTguNTg3aDQuOTE1VjguNzg5MDZoLTQuOTE1Wm0yLjUwMy0yNi42MjhhMi44MjIsMi44MjIsMCwwLDAtMi44NTksMi43ODQ1MXEtLjAwMDUuMDM3MjMsMCwuMDc0NDlhMi44NTg1LDIuODU4NSwwLDEsMCwyLjg1OS0yLjg1OSIvPgogIDxyZWN0IGNsYXNzPSJjbHMtMSIgd2lkdGg9IjEwMS42MDM2NCIgaGVpZ2h0PSIyOC43NzAzMyIvPgo8L3N2Zz4K","partnerLogoDark":null,"partnerColor":null,"partnerUrl":"https://www.belkin.com","retailerUrl":"https://zoommer.ge"},"lines":[{"id":"lmwacpd885839","platform":"Facebook","objective":"Traffic","format":"Dynamic Ad","start":"2026-12-01","end":"2027-01-04","spend":350,"paidBy":"shared","cpm":1.47,"cpr":0.08,"freq":2.8,"creativeId":"cmwacnc3x9632","actual":{}},{"id":"lmwacz6uo7192","platform":"Facebook","objective":"Awareness","format":"Link Ad","start":"2026-12-01","end":"2027-01-04","spend":200,"paidBy":"shared","cpm":0.33,"cpr":null,"freq":1.7,"creativeId":"cmwacnmfz682","actual":{}},{"id":"lmwad26bo7042","platform":"Instagram","objective":"Awareness","format":"Link Ad","start":"2026-12-01","end":"2027-01-04","spend":200,"paidBy":"shared","cpm":1.2,"cpr":null,"freq":2,"creativeId":"cmwacnmfz682","actual":{}},{"id":"lmwadfj0o62","platform":"Google Search","objective":"Traffic","format":"Search Ad","start":"2026-12-01","end":"2027-01-04","spend":700,"paidBy":"supplier","cpm":0.33,"cpr":null,"freq":1.7,"creativeId":"cmwacp8hw6075","actual":{}}],"creatives":[{"id":"cmwacnc3x9632","scope":"Meta – FB","format":"Dynamic ad","price":100,"qty":1,"paidBy":"shared","img":null},{"id":"cmwacnmfz682","scope":"Meta – FB & IG","format":"Static post + story","price":335,"qty":1,"paidBy":"shared","img":null},{"id":"cmwacp8hw6075","scope":"Google Search Advertising","format":"Search Ad","price":100,"qty":1,"paidBy":"shared","img":null}],"priceList":[{"id":"p1","scope":"Meta – FB & IG","format":"Static post","price":300},{"id":"p2","scope":"Meta – FB & IG","format":"Static post + story","price":335},{"id":"p3","scope":"Only FB","format":"Static post","price":150},{"id":"p4","scope":"Only IG","format":"Static post","price":150},{"id":"p5","scope":"Only FB","format":"Static post + story","price":180},{"id":"p6","scope":"Only IG","format":"Static post + story","price":180},{"id":"p7","scope":"Meta – FB & IG","format":"Story","price":70},{"id":"p8","scope":"Only FB","format":"Instant Experience / Collection","price":400},{"id":"p9","scope":"Meta – FB","format":"Dynamic ad","price":100},{"id":"p15","scope":"Meta – IG","format":"Dynamic ad","price":100},{"id":"p10","scope":"Meta – FB + YouTube (full/short) + IG","format":"Full video + reel + story","price":900},{"id":"p11","scope":"TikTok + IG + FB","format":"Reels + story","price":500},{"id":"p12","scope":"Google Display Network","format":"HTML campaign","price":350},{"id":"p13","scope":"Google Display Network","format":"Static banner campaign","price":200},{"id":"p14","scope":"zoommer website","format":"Main banner","price":150},{"id":"pmwacojgb4552","scope":"Google Search Advertising","format":"Search Ad","price":100}],"benchmarks":[{"platform":"Facebook","objective":"Awareness","format":"Link Ad","cpm":0.33,"cpr":null,"freq":1.7},{"platform":"Instagram","objective":"Awareness","format":"Link Ad","cpm":1.2,"cpr":null,"freq":2},{"platform":"Instagram","objective":"Awareness","format":"Story","cpm":0.37,"cpr":null,"freq":1.5},{"platform":"Facebook","objective":"Traffic","format":"Link Ad","cpm":0.9,"cpr":0.12,"freq":2.8},{"platform":"Facebook","objective":"Engagement","format":"Link Ad","cpm":2.03,"cpr":0.75,"freq":2.3},{"platform":"Instagram","objective":"Engagement","format":"Link Ad","cpm":2.1,"cpr":0.68,"freq":2.4}],"updated":"2026-11-10T07:40:38.990Z","priceNote":"The prices are flexible depending on the period and how many platforms and formats are selected; any discount will be reflected accordingly."}</script>
+<script id="plan-data" type="application/json">{"campaign":{"name":"","supplier":"Belkin","retailer":"zoommer","start":"2026-12-01","end":"2026-12-15","currency":"USD","supplierShare":0.85,"taxPct":0,"partnerLogo":"data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDEuNjAzNjQgMjguNzcwMzMiPgogIDxkZWZzPgogICAgPHN0eWxlPgogICAgICAuY2xzLTEgewogICAgICAgIGZpbGw6IG5vbmU7CiAgICAgIH0KICAgIDwvc3R5bGU+CiAgPC9kZWZzPgogIDxwYXRoIGQ9Ik05Ny4wNzUxLDE3LjE5MTA3djEwLjI3NmgtNC45MTR2LTEwLjI3NmMwLTIuNzcxLTEuMDc1LTQuNDY3LTMuNzU2LTQuNDY3LTIuNjgsMC0zLjc1MiwxLjY5Ni0zLjc1Miw0LjQ2N3YxMC4yNzZoLTQuOTE1di0xMC4yNzZjMC01LjcyMSwyLjk0OC05LjAyNiw4Ljc1Ny05LjAyNiw1LjcxOS0uMDAxLDguNTgsMy4yMTcsOC41OCw5LjAyNm0tNzYuNjczLjg5M2E5LjM4MTYsOS4zODE2LDAsMCwxLTguOTEwNzIsOS44M3EtLjQ1ODg3LjAyMjUxLS45MTgyOCwwQTkuNTI2MDgsOS41MjYwOCwwLDAsMSwuNjU0LDE4Ljc5NzlxLS4wMTctLjQwMjI0LjAwMDA4LS44MDQ4M1YxLjczMTA3aDQuOTE2djkuMDI0YTcuNzU2NTMsNy43NTY1MywwLDAsMSw1Ljg5Ny0yLjUwMmM1LjM2MS0uMDg5LDguOTM1LDMuOTMzLDguOTM1LDkuODMxbS01LjAwNCwwYTQuOTkwNTIsNC45OTA1MiwwLDAsMC00LjY5OTU0LTUuMjY1NDNxLS4xMDc2NC0uMDA2MS0uMjE1NDYtLjAwNzU3YTUuMDQ0MjQsNS4wNDQyNCwwLDAsMC00LjkxNzcyLDUuMTY3NjVxLjAwMTMyLjA1MjcuMDAzNzIuMTA1MzVBNC45ODkxNiw0Ljk4OTE2LDAsMCwwLDEwLjI2OCwyMy4zNDc1M3EuMTA3NDcuMDA2MDkuMjE1MTMuMDA3NTRhNC45ODc4Myw0Ljk4NzgzLDAsMCwwLDQuOTIyNjUtNS4wNTIxNXEtLjAwMTQzLS4xMDk1LS4wMDc2NS0uMjE4ODVtMjYuMDA1LjM1N2E4LjYzNjcyLDguNjM2NzIsMCwwLDEtLjA5LDEuNTJoLTE0LjAzYy4yNjksMi4zMjQsMi40MTQsMy44NDIsNS4wMDUsMy44NDJhNi44MTEyMyw2LjgxMTIzLDAsMCwwLDQuOTE1LTEuNzg3bDIuNTAyLDMuMzk2YTExLjcwNjEsMTEuNzA2MSwwLDAsMS03LjQxNywyLjUwM2MtNS45ODgsMC0xMC4wMDktMy45MzQtMTAuMDA5LTkuNzQyQTkuNjYwNzEsOS42NjA3MSwwLDAsMSwzMS41ODU5MSw4LjE3MXEuMjE2NTEtLjAwNzguNDMzMi0uMDA1ODhjNS44OTgtLjAwMSw5LjM4NCwzLjg0Myw5LjM4NCwxMC4yNzZtLTUuMDA1LTIuMDU2Yy0uMzU3LTIuMzIxLTEuNzg3LTQuMTA4LTQuNTU4LTQuMTA4YTQuNDQwNzcsNC40NDA3NywwLDAsMC00LjU1OCw0LjEwOFptNy41OTUsMTAuOTkxaDQuOTE1VjEuNzMxMDdoLTQuOTE1Wm0yNS42NDgtMTguNTg3aC01LjcyMWwtNi42MSw4LjIyMVYxLjczMTA3aC00LjkxNXYyNS43MzZoNC45MTV2LTguOTM2bDYuNjEsOC45MzdoNS45ODlsLTcuNTk2LTEwLjA5OFptMi4xNDMsMTguNTg3aDQuOTE1VjguNzg5MDZoLTQuOTE1Wm0yLjUwMy0yNi42MjhhMi44MjIsMi44MjIsMCwwLDAtMi44NTksMi43ODQ1MXEtLjAwMDUuMDM3MjMsMCwuMDc0NDlhMi44NTg1LDIuODU4NSwwLDEsMCwyLjg1OS0yLjg1OSIvPgogIDxyZWN0IGNsYXNzPSJjbHMtMSIgd2lkdGg9IjEwMS42MDM2NCIgaGVpZ2h0PSIyOC43NzAzMyIvPgo8L3N2Zz4K","partnerLogoDark":null,"partnerColor":null,"partnerUrl":"https://www.belkin.com","retailerUrl":"https://zoommer.ge"},"lines":[{"id":"lmwaqcdmn184","platform":"Google Search","objective":"Traffic","format":"Search Ad","start":"2026-12-01","end":"2026-12-15","spend":350,"paidBy":"shared","cpm":null,"cpr":1.15,"freq":null,"creativeId":"cmwaqop1h132","actual":{},"metrics":[],"top":65,"abs":50},{"id":"lmwaqema23819","platform":"Facebook","objective":"Traffic","format":"Dynamic Ad","start":"2026-12-01","end":"2026-12-15","spend":190,"paidBy":"shared","cpm":0.83,"cpr":0.09,"freq":2.09,"creativeId":"cmwaqcyd76662","actual":{},"metrics":[]},{"id":"lmwaqncsh6546","platform":"Facebook","objective":"Awareness","format":"Link Ad","start":"2026-12-01","end":"2026-12-15","spend":150,"paidBy":"shared","cpm":0.33,"cpr":null,"freq":1.7,"creativeId":"cmwaqf2iq4165","actual":{}},{"id":"lmwbsozma8721","platform":"Instagram","objective":"Awareness","format":"Link Ad","start":"2026-12-01","end":"2026-12-15","spend":150,"paidBy":"shared","cpm":1.2,"cpr":null,"freq":1.2,"creativeId":"cmwaqf2iq4165","actual":{}}],"creatives":[{"id":"cmwaqcyd76662","scope":"Meta – FB","format":"Dynamic ad","price":100,"qty":1,"paidBy":"shared","img":null},{"id":"cmwaqf2iq4165","scope":"Meta – FB & IG","format":"Static post","price":300,"qty":1,"paidBy":"shared","img":null},{"id":"cmwaqop1h132","scope":"Google Search Advertising","format":"Search Ad","price":100,"qty":1,"paidBy":"shared","img":null}],"priceList":[{"id":"p1","scope":"Meta – FB & IG","format":"Static post","price":300},{"id":"p2","scope":"Meta – FB & IG","format":"Static post + story","price":335},{"id":"p3","scope":"Only FB","format":"Static post","price":150},{"id":"p4","scope":"Only IG","format":"Static post","price":150},{"id":"p5","scope":"Only FB","format":"Static post + story","price":180},{"id":"p6","scope":"Only IG","format":"Static post + story","price":180},{"id":"p7","scope":"Meta – FB & IG","format":"Story","price":70},{"id":"p8","scope":"Only FB","format":"Instant Experience / Collection","price":400},{"id":"p9","scope":"Meta – FB","format":"Dynamic ad","price":100},{"id":"p15","scope":"Meta – IG","format":"Dynamic ad","price":100},{"id":"p10","scope":"Meta – FB + YouTube (full/short) + IG","format":"Full video + reel + story","price":900},{"id":"p11","scope":"TikTok + IG + FB","format":"Reels + story","price":500},{"id":"p12","scope":"Google Display Network","format":"HTML campaign","price":350},{"id":"p13","scope":"Google Display Network","format":"Static banner campaign","price":200},{"id":"p14","scope":"zoommer website","format":"Main banner","price":150},{"id":"pmwaqo5jx2203","scope":"Google Search Advertising","format":"Search Ad","price":100}],"benchmarks":[{"platform":"Facebook","objective":"Awareness","format":"Link Ad","cpm":0.33,"cpr":null,"freq":1.7},{"platform":"Instagram","objective":"Awareness","format":"Link Ad","cpm":1.2,"cpr":null,"freq":2},{"platform":"Instagram","objective":"Awareness","format":"Story","cpm":0.37,"cpr":null,"freq":1.5},{"platform":"Facebook","objective":"Traffic","format":"Link Ad","cpm":0.9,"cpr":0.12,"freq":2.8},{"platform":"Facebook","objective":"Engagement","format":"Link Ad","cpm":2.03,"cpr":0.75,"freq":2.3},{"platform":"Instagram","objective":"Engagement","format":"Link Ad","cpm":2.1,"cpr":0.68,"freq":2.4}],"updated":"2026-11-11T07:27:13.424Z","priceNote":"The prices are flexible depending on the period and how many platforms and formats are selected; any discount will be reflected accordingly."}</script>
 <script id="app-js">
 /*
  * Zoommer ripples ("რიპლები") — SVG generator that follows the brand-book rules:
@@ -396,26 +430,43 @@ function col(o){return "var("+(OBJ_COLOR[o]||"--muted")+")";}
 function pname(k){return k==="supplier"?state.campaign.supplier:k==="retailer"?state.campaign.retailer:"Shared";}
 function uid(p){return p+Date.now().toString(36)+Math.floor(Math.random()*1e4);}
 
+function prof(l){var p=String(l.platform||"").toLowerCase();if(/search/.test(p))return "search";if(/youtube/.test(p))return "video";return "social";}
 function calc(l,f){
-  f=f==null?1:f;
-  var spend=n0(l.spend)*f;
-  var impr=(num(l.cpm)&&l.cpm>0)?spend/l.cpm*1000:null;
-  var rtype=OBJECTIVES[l.objective]||"results";
-  var res=l.objective==="Awareness"?impr:((num(l.cpr)&&l.cpr>0)?spend/l.cpr:null);
-  var reach=(impr!=null&&num(l.freq)&&l.freq>0)?impr/l.freq:null;
+  f=f==null?1:f;var pr=prof(l);
+  var spend=n0(l.spend)*f,rtype=OBJECTIVES[l.objective]||"results",impr=null,res=null,clicks=null,top=null,abs=null,reach=null,freq=null;
+  var cpc=num(l.cpc);if(pr==="search"&&cpc==null&&l.objective==="Traffic")cpc=num(l.cpr);
+  if(pr==="search"&&cpc&&cpc>0)clicks=spend/cpc;
+  if(pr!=="search"&&num(l.cpm)&&l.cpm>0)impr=spend/l.cpm*1000;
+  if(pr==="search"&&clicks!=null&&num(l.ctr)&&l.ctr>0)impr=clicks/(l.ctr/100);
+  var extra=(l.metrics||[]).filter(function(m){return m&&String(m.name||"").trim();}).map(function(m){var v=null,x=num(m.value);
+    if(x!=null){if(m.kind==="fixed")v=x*f;else if(x>0)v=m.kind==="per1000"?spend/x*1000:spend/x;}return {name:String(m.name).trim(),kind:m.kind||"per",value:x,val:v};});
+  if(impr==null)extra.forEach(function(m){if(m.name.toLowerCase()==="impressions"&&m.val!=null)impr=m.val;});
+  if(l.objective==="Awareness")res=impr;
+  else if(l.objective==="Traffic"&&clicks!=null)res=clicks;
+  else if(num(l.cpr)&&l.cpr>0)res=spend/l.cpr;
+  if(l.objective==="Traffic"&&clicks==null&&res!=null)clicks=res;
+  if(pr==="search"){if(impr!=null&&num(l.top)!=null)top=impr*l.top/100;if(impr!=null&&num(l.abs)!=null)abs=impr*l.abs/100;}
+  else if(num(l.reachIn)&&l.reachIn>0){reach=l.reachIn*f;freq=impr!=null?impr/reach:null;}
+  else if(impr!=null&&num(l.freq)&&l.freq>0){reach=impr/l.freq;freq=l.freq;}
   var d=days(l.start,l.end);
-  return {spend:spend,impr:impr,res:res,rtype:rtype,reach:reach,days:d,daily:d?spend/d:null};
+  return {spend:spend,impr:impr,res:res,rtype:rtype,reach:reach,freq:freq,clicks:clicks,cpc:cpc,top:top,abs:abs,prof:pr,days:d,daily:d?spend/d:null,extra:extra};
 }
 function creCost(c){return n0(c.price)*(num(c.qty)==null?1:c.qty);}
 function totals(f){
   var c=state.campaign,sh=num(c.supplierShare);if(sh==null)sh=.5;
-  var t={spend:0,cre:0,impr:0,byType:{},spType:{},byObj:{},byPlat:{},sup:0,ret:0,supAd:0,retAd:0,supCre:0,retCre:0};
+  var t={spend:0,cre:0,impr:0,cSp:0,cIm:0,byType:{},spType:{},byObj:{},byPlat:{},sup:0,ret:0,supAd:0,retAd:0,supCre:0,retCre:0};
   function share(k){return k==="supplier"?1:k==="retailer"?0:sh;}
-  state.lines.forEach(function(l){var k=calc(l,f);t.spend+=k.spend;t.impr+=k.impr||0;
+  state.lines.forEach(function(l){var k=calc(l,f);t.spend+=k.spend;t.impr+=k.impr||0;if(k.prof!=="search"&&k.impr&&num(l.cpm)){t.cSp+=k.spend;t.cIm+=k.impr;}
     if(l.objective!=="Awareness"&&k.res!=null){t.byType[k.rtype]=(t.byType[k.rtype]||0)+k.res;t.spType[k.rtype]=(t.spType[k.rtype]||0)+k.spend;}
+    k.extra.forEach(function(m){var key=m.name.toLowerCase();if(m.val==null||key==="impressions"||(key===k.rtype&&k.res!=null))return;t.byType[key]=(t.byType[key]||0)+m.val;t.spType[key]=(t.spType[key]||0)+k.spend;});
     t.byObj[l.objective]=(t.byObj[l.objective]||0)+k.spend;t.byPlat[l.platform]=(t.byPlat[l.platform]||0)+k.spend;
     var s=share(l.paidBy);t.supAd+=k.spend*s;t.retAd+=k.spend*(1-s);});
   state.creatives.forEach(function(cr){var v=creCost(cr);t.cre+=v;var s=share(cr.paidBy);t.supCre+=v*s;t.retCre+=v*(1-s);});
+  var sl=state.lines.filter(function(l){return prof(l)==="search";});
+  if(sl.length){var S={n:sl.length,spend:0,clicks:0,impr:0,topI:0,absI:0,wTop:0,wAbs:0,wT:0,wA:0};
+    sl.forEach(function(l){var k=calc(l,f);S.spend+=k.spend;S.clicks+=k.clicks||0;if(k.impr){S.impr+=k.impr;if(k.top!=null)S.topI+=k.top;if(k.abs!=null)S.absI+=k.abs;}
+      if(num(l.top)!=null){S.wTop+=l.top*k.spend;S.wT+=k.spend;}if(num(l.abs)!=null){S.wAbs+=l.abs*k.spend;S.wA+=k.spend;}});
+    S.topPct=S.wT?S.wTop/S.wT:null;S.absPct=S.wA?S.wAbs/S.wA:null;t.search=S;}
   t.fee=t.spend*n0(c.taxPct);t.sup=t.supAd+t.supCre;t.ret=t.retAd+t.retCre;t.total=t.spend+t.cre+t.fee;
   return t;
 }
@@ -521,12 +572,12 @@ function renderPresent(){
      '<div class="hint" id="budgetHint"></div></div></div></section>';
 
   // ads
-  h+='<section class="band"><div class="wrap"><h2>The ads</h2><p class="lead">Each ad with its budget, price assumptions and expected result.</p><div class="ads">';
-  L.forEach(function(l,i){var k=calc(l);var cr=CR.filter(function(x){return x.id===l.creativeId;})[0];
-    h+='<article class="ad"><div class="bar" style="background:'+col(l.objective)+'"></div><div class="body"><h3>'+(i+1)+'. '+esc(l.platform)+'</h3>'+
-      '<div class="tags"><button type="button" class="tag obj" data-obj="'+esc(l.objective)+'" title="What does '+esc(l.objective)+' mean?" style="background:'+col(l.objective)+(LIGHT_OBJ[l.objective]?';color:var(--zm-oxford)':'')+'">'+esc(l.objective)+'</button><span class="tag">'+esc(l.format)+'</span>'+(cr?'<span class="tag">Creative: '+esc(cr.format)+'</span>':'')+'</div>'+
-      '<div class="facts"><span>Ad spend <b>'+fM(k.spend)+'</b></span><span>Runs <b>'+fD(l.start)+' – '+fD(l.end)+'</b></span><span>'+(l.objective==="Awareness"?'CPM <b>'+fM(l.cpm,2)+'</b>':'Cost per result <b>'+fM(l.cpr,2)+'</b>')+'</span><span>Reach <b>'+fN(k.reach)+'</b> people</span><span>Frequency <b>'+(num(l.freq)!=null?l.freq:'–')+'</b></span><span>Paid by <b>'+nm(pname(l.paidBy))+'</b></span></div>'+howCalc(l,k)+'</div>'+
-      '<div class="out"><div class="v">'+fN(k.res)+'</div><div class="l">expected '+esc(k.rtype)+'</div></div></article>';});
+  var plats=[];L.forEach(function(l){if(plats.indexOf(l.platform)<0)plats.push(l.platform);});
+  h+='<section class="band" id="ads"><div class="wrap"><h2>The ads</h2><p class="lead">Each ad with its budget, prices and expected results. Filter by platform or sort to compare.</p>'+
+     '<div class="filters" role="group" aria-label="Filter ads by platform"><button type="button" class="fchip" data-pf="" aria-pressed="'+(!platFilter)+'">All<small>'+L.length+'</small></button>';
+  plats.forEach(function(pl){var n=L.filter(function(l){return l.platform===pl;}).length;h+='<button type="button" class="fchip" data-pf="'+esc(pl)+'" aria-pressed="'+(platFilter===pl)+'">'+esc(pl)+'<small>'+n+' ad'+(n>1?'s':'')+', '+fM(t.byPlat[pl])+'</small></button>';});
+  h+='<label class="sortl">Sort <select id="adsSort"><option value="plan">plan order</option><option value="budget"'+(adsSort==="budget"?' selected':'')+'>budget, high to low</option><option value="results"'+(adsSort==="results"?' selected':'')+'>expected results</option></select></label></div><div class="ads" id="adsList">';
+  L.forEach(function(l,i){var k=calc(l),cr=CR.filter(function(x){return x.id===l.creativeId;})[0];h+=adCard(l,i,k,cr);});
   h+='</div></div></section>';
 
   // creatives
@@ -544,7 +595,7 @@ function renderPresent(){
     for(var w=0;w<nw;w++){var ws=new Date(cs.getTime()+w*7*864e5);h+='<div style="flex:'+Math.min(7,tot-w*7)+' 0 0">'+ws.getUTCDate()+' '+MON[ws.getUTCMonth()]+'</div>';}
     h+='</div></div></div>';
     L.forEach(function(l,i){var s=dt(l.start)||cs,e=dt(l.end)||ce;var a=Math.max(0,(s-cs)/864e5),b=Math.min(tot,(e-cs)/864e5+1);
-      h+='<div class="tl-row"><div class="tl-label">'+(i+1)+'. '+esc(l.platform)+' <span>'+esc(l.format)+'</span></div><div class="tl-track"><div class="tl-weeks">';
+      h+='<div class="tl-row" data-plat="'+esc(l.platform)+'"><div class="tl-label">'+(i+1)+'. '+esc(l.platform)+' <span>'+esc(l.format)+'</span></div><div class="tl-track"><div class="tl-weeks">';
       for(var w2=0;w2<nw;w2++)h+='<div style="flex:'+Math.min(7,tot-w2*7)+' 0 0"></div>';
       h+='</div><div class="tl-bar" style="left:'+(a/tot*100)+'%;width:'+Math.max(.5,(b-a)/tot*100)+'%;background:'+col(l.objective)+'" title="'+fD(l.start)+' – '+fD(l.end)+'"></div></div></div>';});
     h+='</div></div></div></section>';
@@ -571,13 +622,55 @@ function renderPresent(){
      '<dt>Awareness / Traffic / Engagement</dt><dd>The goal of the ad: be seen by many people / bring clicks to the website / get likes, comments and shares.</dd></dl></details></div></section>';
   h+='<footer class="foot"><div class="wrap flex"><span class="lock">'+lnk(c.retailerUrl==null?"https://zoommer.ge":c.retailerUrl,nt(c.retailer||"zoommer")+" website",'<span class="wlogo" role="img" aria-label="zoommer"></span>')+(c.partnerLogo?'<span class="divider"></span>'+lnk(c.partnerUrl,nt(c.supplier)+" website",'<img class="flogo" src="'+esc(c.partnerLogoDark||c.partnerLogo)+'" alt="'+nt(c.supplier)+'">'):'')+'</span><small>Prepared by <span class="zm">zoommer</span> for '+nm(c.supplier)+'. Last saved '+(state.updated?new Date(state.updated).toLocaleDateString("en-GB",{day:"numeric",month:"short",year:"numeric"}):"–")+'.</small></div></footer>';
   document.getElementById("present").innerHTML=h;
-  drawRipples();wireCalc(t);renderMetrics();renderObj();
+  drawRipples();wireCalc(t);renderMetrics();renderObj();applyAdsView();
 }
+var platFilter="",adsSort="plan";
+function kpi(v,l,hl){return '<div class="kpi'+(hl?' hl':'')+'"><div class="v">'+v+'</div><div class="l">'+l+'</div></div>';}
+function pct(v){return num(v)==null?"–":(Math.round(v*10)/10)+"%";}
+function adCard(l,i,k,cr){
+  var lite=LIGHT_OBJ[l.objective],ac=col(l.objective),h='<article class="ad2" data-plat="'+esc(l.platform)+'" data-i="'+i+'" data-spend="'+k.spend+'" data-res="'+(k.res||0)+'" style="--ac:'+ac+'">'+
+    '<header><span class="num"'+(lite?' style="color:var(--zm-oxford)"':'')+'>'+(i+1)+'</span><div><h3>'+esc(l.platform)+'</h3><div class="tags"><button type="button" class="tag obj" data-obj="'+esc(l.objective)+'" title="What does '+esc(l.objective)+' mean?" style="background:'+ac+(lite?';color:var(--zm-oxford)':'')+'">'+esc(l.objective)+'</button><span class="tag">'+esc(l.format)+'</span>'+(cr?'<span class="tag">Creative: '+esc(cr.format)+'</span>':'')+'</div></div>'+
+    '<div class="out"><div class="v">'+fN(k.res)+'</div><div class="l">expected '+esc(k.rtype)+'</div></div></header><div class="kpis">';
+  h+=kpi(fM(k.spend),'ad budget'+(k.daily!=null?', '+fM(k.daily,2)+' a day':''));
+  if(k.prof==="search"){
+    h+=kpi(fM(k.cpc,2),'CPC, cost per click')+kpi(fN(k.clicks),'clicks')+kpi(pct(l.top),'Impr. (Top) %, shown above search results',true)+kpi(pct(l.abs),'Impr. (Abs. Top) %, shown as the very first ad');
+    if(k.impr!=null)h+=kpi(fN(k.impr),'impressions'+(num(l.ctr)?' at '+pct(l.ctr)+' CTR':''));
+    if(l.objective!=="Traffic"&&num(l.cpr))h+=kpi(fM(l.cpr,2),'cost per '+esc(k.rtype.replace(/s$/,"")));
+  }else{
+    if(num(l.cpm)!=null)h+=kpi(fM(l.cpm,2),'CPM, price of 1,000 impressions');
+    if(l.objective!=="Awareness"&&num(l.cpr)!=null)h+=kpi(fM(l.cpr,2),(k.prof==="video"&&l.objective==="Video Views"?'CPV, cost per view':'cost per '+esc(k.rtype.replace(/s$/,""))));
+    if(k.impr!=null&&l.objective!=="Awareness")h+=kpi(fN(k.impr),'impressions');
+    h+=kpi(fN(k.reach),'reach, people'+(num(l.reachIn)?' (planner estimate)':''))+kpi(k.freq!=null?(Math.round(k.freq*10)/10):'–','frequency, views per person');
+  }
+  k.extra.forEach(function(m){if(m.val==null||m.name.toLowerCase()==="impressions")return;h+=kpi(fN(m.val),esc(m.name.toLowerCase())+(m.kind!=="fixed"&&m.value!=null?', '+fM(m.value,2)+(m.kind==="per1000"?' per 1,000':' each'):''));});
+  h+='</div>';
+  if(k.prof==="search"&&(num(l.top)!=null||num(l.abs)!=null)){
+    h+='<div class="svis"><div class="svh">Where the ad shows on Google</div>'+
+      svRow('All impressions',100,k.impr,'var(--line)')+svRow('Top of page',num(l.top),k.top,'var(--zm-blue)')+svRow('Absolute top (1st ad)',num(l.abs),k.abs,'var(--zm-orange)')+'</div>';
+  }
+  h+='<div class="meta"><span>Runs <b>'+fD(l.start)+' – '+fD(l.end)+'</b></span><span>Paid by <b>'+nm(pname(l.paidBy))+'</b></span></div>'+howCalc(l,k)+'</article>';
+  return h;
+}
+function svRow(lab,p,n,c){return '<div class="svrow"><span>'+lab+'</span><span class="svtrack"><i style="width:'+(p==null?0:Math.max(0,Math.min(100,p)))+'%;background:'+c+'"></i></span><span class="svv"><b>'+(p==null?'–':pct(p))+'</b>'+(n!=null?', '+fN(n):'')+'</span></div>';}
+function applyAdsView(){
+  var list=document.getElementById("adsList");if(!list)return;
+  Array.prototype.forEach.call(document.querySelectorAll('#present [data-plat]'),function(el){el.classList.toggle("is-hidden",!!platFilter&&el.getAttribute("data-plat")!==platFilter);});
+  Array.prototype.forEach.call(document.querySelectorAll('#present .fchip'),function(b){b.setAttribute("aria-pressed",String((b.getAttribute("data-pf")||"")===platFilter));});
+  var cards=Array.prototype.slice.call(list.children);
+  cards.sort(function(a,b){if(adsSort==="budget")return b.getAttribute("data-spend")-a.getAttribute("data-spend");if(adsSort==="results")return b.getAttribute("data-res")-a.getAttribute("data-res");return a.getAttribute("data-i")-b.getAttribute("data-i");});
+  cards.forEach(function(c){list.appendChild(c);});
+}
+document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest("[data-pf]");if(!b)return;platFilter=b.getAttribute("data-pf")||"";applyAdsView();});
+document.addEventListener("change",function(e){if(e.target&&e.target.id==="adsSort"){adsSort=e.target.value;applyAdsView();}});
 function howCalc(l,k){
   var s='<details class="how"><summary>How this is calculated</summary><div>';
-  if(num(l.cpm))s+='Impressions = '+fM(k.spend)+' ÷ '+fM(l.cpm,2)+' CPM × 1,000 = <b>'+fN(k.impr)+'</b><br>';
-  if(l.objective!=="Awareness"&&num(l.cpr))s+=k.rtype.charAt(0).toUpperCase()+k.rtype.slice(1)+' = '+fM(k.spend)+' ÷ '+fM(l.cpr,2)+' per result = <b>'+fN(k.res)+'</b><br>';
-  if(k.reach!=null)s+='Reach = '+fN(k.impr)+' impressions ÷ frequency '+l.freq+' = <b>'+fN(k.reach)+'</b> people<br>';
+  if(k.prof==="search"){if(k.cpc)s+='Clicks = '+fM(k.spend)+' ÷ '+fM(k.cpc,2)+' CPC = <b>'+fN(k.clicks)+'</b><br>';if(k.impr!=null&&num(l.ctr))s+='Impressions = '+fN(k.clicks)+' clicks ÷ '+pct(l.ctr)+' CTR = <b>'+fN(k.impr)+'</b><br>';
+    if(k.top!=null)s+='Top of page = '+fN(k.impr)+' × '+pct(l.top)+' = <b>'+fN(k.top)+'</b><br>';if(k.abs!=null)s+='Absolute top = '+fN(k.impr)+' × '+pct(l.abs)+' = <b>'+fN(k.abs)+'</b><br>';
+    if(l.objective!=="Traffic"&&num(l.cpr))s+=k.rtype.charAt(0).toUpperCase()+k.rtype.slice(1)+' = '+fM(k.spend)+' ÷ '+fM(l.cpr,2)+' = <b>'+fN(k.res)+'</b><br>';}
+  else{if(num(l.cpm))s+='Impressions = '+fM(k.spend)+' ÷ '+fM(l.cpm,2)+' CPM × 1,000 = <b>'+fN(k.impr)+'</b><br>';
+  if(l.objective!=="Awareness"&&num(l.cpr))s+=k.rtype.charAt(0).toUpperCase()+k.rtype.slice(1)+' = '+fM(k.spend)+' ÷ '+fM(l.cpr,2)+' per result = <b>'+fN(k.res)+'</b><br>';}
+  k.extra.forEach(function(m){if(m.val==null)return;s+=esc(m.name)+' = '+(m.kind==="fixed"?'estimate entered by the team':fM(k.spend)+' ÷ '+fM(m.value,2)+(m.kind==="per1000"?' × 1,000':''))+' = <b>'+fN(m.val)+'</b><br>';});
+  if(k.reach!=null)s+=(num(l.reachIn)?'Reach = planner estimate <b>'+fN(k.reach)+'</b> people'+(k.freq!=null?'; frequency = '+fN(k.impr)+' ÷ '+fN(k.reach)+' = <b>'+(Math.round(k.freq*100)/100)+'</b>':''):'Reach = '+fN(k.impr)+' impressions ÷ frequency '+k.freq+' = <b>'+fN(k.reach)+'</b> people')+'<br>';
   if(k.daily!=null)s+='Daily budget = '+fM(k.spend)+' ÷ '+k.days+' days = <b>'+fM(k.daily,2)+'</b>';
   return s+'</div></details>';
 }
@@ -634,7 +727,8 @@ function renderMetrics(){
   var tag=f!==1?'<span class="scen">Scenario</span>':'';
   var h='<div class="metrics"><div class="metric"><div class="v">'+fN(t.impr)+'</div><div class="l">impressions'+tag+'</div><div class="d">times the ads are shown</div></div>';
   Object.keys(t.byType).forEach(function(k){h+='<div class="metric"><div class="v">'+fN(t.byType[k])+'</div><div class="l">'+esc(k)+tag+'</div><div class="d">about '+fM(t.byType[k]?t.spType[k]/t.byType[k]:null,2)+' each</div></div>';});
-  h+='<div class="metric"><div class="v">'+fM(t.impr?t.spend/t.impr*1000:null,2)+'</div><div class="l">average CPM</div><div class="d">price of 1,000 impressions</div></div></div>';
+  if(t.search&&t.search.topPct!=null)h+='<div class="metric hl"><div class="v">'+pct(t.search.topPct)+'</div><div class="l">Impr. (Top) %, Google Search</div><div class="d">'+(t.search.absPct!=null?'Abs. Top '+pct(t.search.absPct)+', ':'')+fN(t.search.clicks)+' clicks at '+fM(t.search.clicks?t.search.spend/t.search.clicks:null,2)+' CPC</div></div>';
+  h+=(t.cIm?'<div class="metric"><div class="v">'+fM(t.cSp/t.cIm*1000,2)+'</div><div class="l">average CPM</div><div class="d">price of 1,000 impressions'+(t.search?', without Search ads':'')+'</div></div>':'')+'</div>';
   el.innerHTML=h;
   var hint=document.getElementById("budgetHint");
   if(hint)hint.textContent=f===1?"This is the planned ad budget ("+fM(base.spend)+"). Results keep the same split across ads and the same prices.":
@@ -666,12 +760,39 @@ function listsPanel(){
   return '<div class="panel"><details data-key="lists"><summary style="cursor:pointer;font-family:var(--zm-font-display);text-transform:uppercase;font-size:24px;font-weight:900">Platforms and ad formats</summary><p class="note">These lists feed the Platform and Ad format dropdowns. Add new ones with “+ Add new…” at the bottom of a dropdown. Items used by an ad can’t be removed.</p>'+chips("platforms","Platforms")+chips("formats","Ad formats")+'</details></div>';
 }
 function paidSel(path,v){var c=state.campaign;return '<select data-path="'+path+'"><option value="shared"'+(v==="shared"?" selected":"")+'>Shared</option><option value="supplier"'+(v==="supplier"?" selected":"")+'>'+nt(c.supplier)+'</option><option value="retailer"'+(v==="retailer"?" selected":"")+'>'+nt(c.retailer)+'</option></select>';}
-function liveLine(l){var k=calc(l);return 'Estimated: <b>'+fN(k.impr)+'</b> impressions, '+(l.objective==="Awareness"?'':'<b>'+fN(k.res)+'</b> '+esc(k.rtype)+', ')+'reach <b>'+fN(k.reach)+'</b> people, daily ad spend <b>'+fM(k.daily,2)+'</b>.';}
+function liveLine(l){var k=calc(l),parts=[];
+  if(k.prof==="search"&&k.clicks!=null)parts.push('<b>'+fN(k.clicks)+'</b> clicks');
+  if(k.impr!=null)parts.push('<b>'+fN(k.impr)+'</b> impressions');
+  if(k.prof==="search"){if(num(l.top)!=null)parts.push('top of page <b>'+pct(l.top)+'</b>'+(k.top!=null?' (≈ '+fN(k.top)+')':''));if(num(l.abs)!=null)parts.push('absolute top <b>'+pct(l.abs)+'</b>');}
+  if(l.objective!=="Awareness"&&k.res!=null&&!(k.prof==="search"&&l.objective==="Traffic"))parts.push('<b>'+fN(k.res)+'</b> '+esc(k.rtype));
+  k.extra.forEach(function(m){if(m.val!=null&&m.name.toLowerCase()!=="impressions")parts.push('<b>'+fN(m.val)+'</b> '+esc(m.name.toLowerCase()));});
+  if(k.reach!=null)parts.push('reach <b>'+fN(k.reach)+'</b> people'+(k.freq!=null?', frequency <b>'+(Math.round(k.freq*100)/100)+'</b>':''));
+  var warn=(k.prof==="search"&&num(l.top)!=null&&num(l.abs)!=null&&l.abs>l.top)?' <b style="color:var(--bad)">Abs. Top % can’t be higher than Top %.</b>':'';
+  return 'Estimated: '+(parts.length?parts.join(', '):'add prices or a metric below')+'. Daily ad spend <b>'+fM(k.daily,2)+'</b>.'+warn;}
+var MKINDS=[["per","Cost per one"],["per1000","Cost per 1,000"],["fixed","Fixed estimate"]];
+function profFields(l,p){var pr=prof(l),rt=OBJECTIVES[l.objective]||"results",N=' min="0" step="0.01"';
+  if(pr==="search")return F("CPC, cost per click",I(p+"cpc",num(l.cpc)!=null?l.cpc:(l.objective==="Traffic"?l.cpr:null),"number",N))+
+    (l.objective==="Traffic"||l.objective==="Awareness"?'':F("Cost per "+rt.replace(/s$/,""),I(p+"cpr",l.cpr,"number",N)))+
+    F("Impr. (Top) %",I(p+"top",l.top,"number",' min="0" max="100" step="0.1" placeholder="e.g. 70"'))+F("Impr. (Abs. Top) %",I(p+"abs",l.abs,"number",' min="0" max="100" step="0.1" placeholder="e.g. 30"'))+
+    F("CTR %, for impressions (optional)",I(p+"ctr",l.ctr,"number",' min="0" max="100" step="0.1" placeholder="e.g. 8"'));
+  var vid=pr==="video"&&l.objective==="Video Views";
+  return F("CPM",I(p+"cpm",l.cpm,"number",N))+F(vid?"CPV, cost per view":"Cost per result",I(p+"cpr",l.cpr,"number",N+(l.objective==="Awareness"?' readonly placeholder="Uses CPM"':'')))+
+    F("Frequency",I(p+"freq",l.freq,"number",' min="0" step="0.1"'+(num(l.reachIn)?' placeholder="from reach"':'')))+F("Reach, if known (optional)",I(p+"reachIn",l.reachIn,"number",' min="0" step="1" placeholder="e.g. from Reach Planner"'));
+}
+function metricsEd(l,i){var k=calc(l),h='<div class="mets"><div class="mets-h"><b>Other metrics</b> <span class="note" style="margin:0">optional, e.g. clicks and conversions for Search ads</span></div>';
+  (l.metrics||[]).forEach(function(m,j){var p="l."+i+".metrics."+j+".",cm=k.extra.filter(function(x){return x.name===String(m.name||"").trim();})[0];
+    h+='<div class="met"><input data-path="'+p+'name" type="text" list="metricNames" placeholder="Metric, e.g. Conversions" value="'+esc(m.name||"")+'" aria-label="Metric name">'+
+      '<select data-path="'+p+'kind" aria-label="How it is estimated">'+MKINDS.map(function(o){return '<option value="'+o[0]+'"'+((m.kind||"per")===o[0]?' selected':'')+'>'+o[1]+'</option>';}).join("")+'</select>'+
+      '<input data-path="'+p+'value" type="number" min="0" step="any" placeholder="'+((m.kind||"per")==="fixed"?"Number":"Price")+'" value="'+esc(m.value==null?"":m.value)+'" aria-label="Value">'+
+      '<span class="mv" data-mv="'+i+'.'+j+'">'+(cm&&cm.val!=null?'≈ '+fN(cm.val):'')+'</span><button type="button" class="btn ghost" data-act="delMet" data-i="'+i+'" data-j="'+j+'" aria-label="Remove metric">×</button></div>';});
+  return h+'<button type="button" class="btn" data-act="addMet" data-i="'+i+'">+ Add metric</button></div>';}
 function liveTotals(){var t=totals();return 'Ad spend <b>'+fM(t.spend)+'</b>, creative production <b>'+fM(t.cre)+'</b>'+(t.fee?', tax/fees <b>'+fM(t.fee)+'</b>':'')+', total <b>'+fM(t.total)+'</b>. '+nm(state.campaign.supplier)+' pays <b>'+fM(t.sup)+'</b>, '+nm(state.campaign.retailer)+' <b>'+fM(t.ret)+'</b>.';}
 function renderEdit(){
   var c=state.campaign,h='<main><div class="wrap">';
   var dr=readDraft();
   if(dr&&!dirty)h+='<div class="banner"><span>You have unsaved edits from an earlier session.</span><button class="btn" type="button" id="restore">Restore edits</button><button class="btn ghost" type="button" id="dropdraft">Discard them</button></div>';
+  h+='<datalist id="metricNames"><option value="Clicks"><option value="Impressions"><option value="Conversions"><option value="Leads"><option value="Calls"><option value="Purchases"><option value="Video views"><option value="Sessions"></datalist>';
+  h+='<div class="panel" style="margin-bottom:18px"><h3>Bring in a plan from another file</h3><p class="note" style="margin-top:0">Choose an older media plan file (index.html). Its data (partner, ads, creatives, prices) replaces what is shown here, so you can move a plan into this newer version without retyping.</p><label class="btn">Choose plan file<input type="file" accept=".html,text/html" data-file="plan" class="hidden"></label></div>';
   if(LOCAL)h+='<div class="banner"><span><b>You are editing a copy on this computer.</b> When you are done, click <b>Download updated file</b>. The new index.html goes to your Downloads folder; upload that file to the partner’s folder on GitHub. The file you opened is not changed.</span></div>';
   if(!LOCAL)h+='<div class="panel" style="margin-bottom:18px"><h3>Share outside claude.ai</h3><p class="note" style="margin-top:0">Download this page as a stand-alone file for a website such as GitHub Pages. It opens in Present mode only, with the Excel download, and includes any unsaved changes shown here.</p><div class="webexp"><button type="button" class="btn primary" data-act="webexport">Download page for website (index.html)</button><span class="note" style="margin:0">On GitHub, upload it as index.html in this partner’s folder, replacing the old file.</span></div></div>';
   h+='<h2>Edit plan</h2><p class="lead">'+(LOCAL?'Changes show in Present right away. Download the updated file to keep them.':'Changes show in Present right away. Save to update the link everyone sees.')+'</p><div class="live" id="liveTot" style="margin-top:14px">'+liveTotals()+'</div>';
@@ -693,8 +814,8 @@ function renderEdit(){
       F("Platform",SN(p+"platform","platforms",l.platform))+F("Objective",S(p+"objective",Object.keys(OBJECTIVES),l.objective))+F("Ad format",SN(p+"format","formats",l.format))+
       F("Ad budget",I(p+"spend",l.spend,"number",' min="0" step="1"'))+F("Paid by",paidSel(p+"paidBy",l.paidBy))+F("Start",I(p+"start",l.start,"date"))+F("End",I(p+"end",l.end,"date"))+
       '<label class="f">Creative used<select data-path="'+p+'creativeId">'+creOpts(l.creativeId)+'</select></label>'+
-      F("CPM",I(p+"cpm",l.cpm,"number",' min="0" step="0.01"'))+F("Cost per result",I(p+"cpr",l.cpr,"number",' min="0" step="0.01"'+(l.objective==="Awareness"?' readonly placeholder="Uses CPM"':'')))+F("Frequency",I(p+"freq",l.freq,"number",' min="0" step="0.1"'))+
-      '</div><div class="live" data-live="'+i+'">'+liveLine(l)+'</div>'+
+      profFields(l,p)+
+      '</div>'+metricsEd(l,i)+'<div class="live" data-live="'+i+'">'+liveLine(l)+'</div>'+
       '<details class="sub" data-key="act-'+esc(l.id)+'"'+((num(a.spend)!=null||num(a.results)!=null)?' open':'')+'><summary>Actual results (after the campaign)</summary><div class="grid">'+
       F("Actual ad spend",I(p+"actual.spend",a.spend,"number",' min="0" step="0.01"'))+F("Actual impressions",I(p+"actual.impr",a.impr,"number",' min="0"'))+F("Actual reach",I(p+"actual.reach",a.reach,"number",' min="0"'))+F("Actual "+(OBJECTIVES[l.objective]||"results"),I(p+"actual.results",a.results,"number",' min="0"'))+
       '</div></details></div>';});
@@ -728,6 +849,7 @@ function renderEdit(){
 function setPath(path,raw,type){
   var parts=path.split("."),isNum=type==="number",v=isNum?(raw===""?null:parseFloat(raw)):raw;
   if(isNum&&v!=null&&!isFinite(v))v=null;
+  if(parts[0]==="l"&&parts[2]==="metrics"){var ln=state.lines[+parts[1]];ln.metrics=ln.metrics||[];var mm=ln.metrics[+parts[3]];if(mm)mm[parts[4]]=v;return;}
   if(path==="c.__priceNote"){state.priceNote=raw;return;}
   if(parts[0]==="c"){var key=parts[1];if(key.slice(-1)==="%"){key=key.slice(0,-1);v=v==null?null:v/100;}if(key==="currency")v=String(v).toUpperCase();state.campaign[key]=v;return;}
   var arr=parts[0]==="l"?state.lines:parts[0]==="cr"?state.creatives:state.priceList,o=arr[+parts[1]];
@@ -744,9 +866,11 @@ function refreshSelects(){
   Array.prototype.forEach.call(document.querySelectorAll('#edit select[data-path$=".creativeId"]'),function(s){var i=+s.getAttribute("data-path").split(".")[1],l=state.lines[i];if(l)s.innerHTML=creOpts(l.creativeId);});
 }
 function onInput(e){var t=e.target,path=t.getAttribute&&t.getAttribute("data-path");if(!path||t.tagName==="SELECT")return;
-  setPath(path,t.value,t.type);if(/^(pl|cr)\./.test(path))refreshSelects();var m=path.match(/^l\.(\d+)\./);if(m){var b=document.querySelector('[data-live="'+m[1]+'"]');if(b)b.innerHTML=liveLine(state.lines[+m[1]]);}
+  setPath(path,t.value,t.type);if(/^(pl|cr)\./.test(path))refreshSelects();
+  var mi=path.match(/^l\.(\d+)\.metrics/);if(mi){var kk=calc(state.lines[+mi[1]]);Array.prototype.forEach.call(document.querySelectorAll('[data-mv^="'+mi[1]+'."]'),function(sp){var j=+sp.getAttribute("data-mv").split(".")[1],mm=(state.lines[+mi[1]].metrics||[])[j],cm=mm&&kk.extra.filter(function(x){return x.name===String(mm.name||"").trim();})[0];sp.textContent=cm&&cm.val!=null?"≈ "+fN(cm.val):"";});}var m=path.match(/^l\.(\d+)\./);if(m){var b=document.querySelector('[data-live="'+m[1]+'"]');if(b)b.innerHTML=liveLine(state.lines[+m[1]]);}
   changed(false);}
 function onChange(e){var t=e.target;if(t.tagName==="SELECT"&&t.value==="__new"){askNew(t);return;}
+  if(t.getAttribute&&t.getAttribute("data-file")==="plan"){importPlan(t);return;}
   if(t.getAttribute&&t.getAttribute("data-file")){loadImg(t);return;}
   var path=t.getAttribute&&t.getAttribute("data-path");if(!path)return;
   var cm=path.match(/^l\.(\d+)\.creativeId$/);
@@ -775,12 +899,21 @@ function onClick(e){var b=e.target.closest("button");if(!b)return;var a=b.getAtt
   else if(a==="nologo"){c.partnerLogo=null;c.partnerLogoDark=null;}
   else if(a==="nocolor"){c.partnerColor=null;}
   else if(a==="webexport"){saveFile("index.html",new Blob([buildHtml(true)],{type:"text/html"}),"Page downloaded. Upload it to the partner’s folder on GitHub.");return;}
+  else if(a==="addMet"){var ml=state.lines[i];ml.metrics=ml.metrics||[];ml.metrics.push({name:"",kind:"per",value:null});pendingFocus="l."+i+".metrics."+(ml.metrics.length-1)+".name";}
+  else if(a==="delMet"){var jj=+b.getAttribute("data-j");(state.lines[i].metrics||[]).splice(jj,1);}
   else if(a==="delList"){var lk=b.getAttribute("data-k"),lv=b.getAttribute("data-v");state[lk]=listOf(lk).filter(function(x){return x!==lv;});}
   else if(a==="addPl"){state.priceList.push({id:uid("p"),scope:"",format:"",price:null});pendingFocus="pl."+(state.priceList.length-1)+".scope";}
   else if(a==="delPl"){state.priceList.splice(i,1);}
   else return;
   changed(true);
 }
+function importPlan(input){var f=input.files&&input.files[0];if(!f)return;var r=new FileReader();
+  r.onload=function(){try{var m=String(r.result).match(/<script id="plan-data" type="application\/json">([\s\S]*?)<\/script>/);if(!m)throw 0;var d=JSON.parse(m[1]);if(!d||!d.campaign||!Array.isArray(d.lines))throw 0;
+      d.creatives=d.creatives||[];d.priceList=(d.priceList&&d.priceList.length)?d.priceList:state.priceList;d.benchmarks=d.benchmarks||state.benchmarks;
+      if(!d.priceNote&&state.priceNote)d.priceNote=state.priceNote;d.updated=state.updated;
+      state=d;selObj=null;changed(true);toast("Plan for “"+nt(d.campaign.supplier||"partner")+"” loaded. Check it, then save or download.");}
+    catch(e){toast("That file doesn’t look like a media plan page.");}};
+  r.readAsText(f);}
 function loadImg(input){var f=input.files&&input.files[0];if(!f)return;var kind=input.getAttribute("data-file"),i=+input.getAttribute("data-i");
   var r=new FileReader();
   r.onload=function(){
@@ -877,15 +1010,16 @@ function buildWorkbook(X){
 
   // Ads
   var A=wb.addWorksheet("Ads",{views:[{state:"frozen",ySplit:1,showGridLines:false}]});
-  var acols=["#","Platform","Objective","Ad format","Creative","Start","End","Days","Ad budget","Paid by","Result type","CPM","Cost per result","Frequency","Impressions","Est. results","Est. reach","Daily budget"];
-  head(A,1,acols);[5,14,14,14,28,13,13,7,12,12,13,10,13,11,13,13,13,12].forEach(function(w,i){A.getColumn(i+1).width=w;});
+  var acols=["#","Platform","Objective","Ad format","Creative","Start","End","Days","Ad budget","Paid by","Result type","CPM","Cost per result","Frequency","Impressions","Est. results","Est. reach","Daily budget","Other metrics","CPC","Clicks","CTR %","Impr. (Top) %","Impr. (Abs. Top) %"];
+  head(A,1,acols);[5,14,14,14,28,13,13,7,12,12,13,10,13,11,13,13,13,12,34,9,10,8,13,15].forEach(function(w,i){A.getColumn(i+1).width=w;});
   L.forEach(function(l,i){var r=i+2,k=calc(l),cr=CR.filter(function(x){return x.id===l.creativeId;})[0];
     var v=[i+1,l.platform,l.objective,l.format,cr?(cr.scope+" – "+cr.format):"",d(l.start),d(l.end),fx("IF(AND(ISNUMBER(F"+r+"),ISNUMBER(G"+r+")),G"+r+"-F"+r+"+1,\"\")",k.days),n0(l.spend),pn(l.paidBy),OBJECTIVES[l.objective]||"results",num(l.cpm),num(l.cpr),num(l.freq),
-      fx("IF(N(L"+r+")>0,I"+r+"/L"+r+"*1000,\"\")",k.impr),fx("IF(K"+r+"=\"impressions\",O"+r+",IF(N(M"+r+")>0,I"+r+"/M"+r+",\"\"))",k.res),fx("IF(AND(ISNUMBER(O"+r+"),N(N"+r+")>0),O"+r+"/N"+r+",\"\")",k.reach),fx("IF(N(H"+r+")>0,I"+r+"/H"+r+",\"\")",k.daily)];
-    v.forEach(function(x,j){var cl=A.getCell(r,j+1);cl.value=x==null?null:x;sty(cl,[null,null,null,null,null,DATE,DATE,"0",MONEY,null,null,MONEY2,MONEY2,"0.0#",INT,INT,INT,MONEY2][j],{fill:i%2?GHOST:null});});});
+      fx("IF(N(L"+r+")>0,I"+r+"/L"+r+"*1000,"+(k.impr!=null&&!num(l.cpm)?Math.round(k.impr):"\"\"")+")",k.impr),(k.prof==="search"&&l.objective==="Traffic"?fx("IF(N(T"+r+")>0,I"+r+"/T"+r+",\"\")",k.res):fx("IF(K"+r+"=\"impressions\",O"+r+",IF(N(M"+r+")>0,I"+r+"/M"+r+",\"\"))",k.res)),(num(l.reachIn)?Math.round(k.reach):fx("IF(AND(ISNUMBER(O"+r+"),N(N"+r+")>0),O"+r+"/N"+r+",\"\")",k.reach)),fx("IF(N(H"+r+")>0,I"+r+"/H"+r+",\"\")",k.daily),k.extra.filter(function(m){return m.val!=null;}).map(function(m){return m.name+" ≈ "+Math.round(m.val).toLocaleString("en-US")+(m.kind==="fixed"?" (estimate)":" ("+fM(m.value,2)+(m.kind==="per1000"?" per 1,000)":" each)"));}).join("; "),k.prof==="search"?k.cpc:null,k.prof==="search"?fx("IF(N(T"+r+")>0,I"+r+"/T"+r+",\"\")",k.clicks):(k.clicks!=null?Math.round(k.clicks):null),num(l.ctr)!=null?l.ctr/100:null,num(l.top)!=null?l.top/100:null,num(l.abs)!=null?l.abs/100:null];
+    if(k.prof==="search"){v[11]=null;v[13]=null;}else if(k.freq!=null)v[13]=Math.round(k.freq*100)/100;
+    v.forEach(function(x,j){var cl=A.getCell(r,j+1);cl.value=x==null?null:x;sty(cl,[null,null,null,null,null,DATE,DATE,"0",MONEY,null,null,MONEY2,MONEY2,"0.0#",INT,INT,INT,MONEY2,null,MONEY2,INT,"0.0%","0.0%","0.0%"][j],{fill:i%2?GHOST:null});});});
   var AT=L.length+2,AL=Math.max(2,AT-1);
   A.getCell(AT,2).value="Total";A.getCell(AT,9).value=fx("SUM(I2:I"+AL+")",t.spend);A.getCell(AT,15).value=fx("SUM(O2:O"+AL+")",t.impr);A.getCell(AT,17).value="not added up";
-  for(var j=1;j<=18;j++){var cl=A.getCell(AT,j);sty(cl,j===9?MONEY:j===15?INT:null,{bold:true,fill:PINK,color:j===9?OR:OX});}
+  for(var j=1;j<=24;j++){var cl=A.getCell(AT,j);sty(cl,j===9?MONEY:j===15?INT:null,{bold:true,fill:PINK,color:j===9?OR:OX});}
   A.getCell(AT,17).font={name:F,size:9,italic:true,color:{argb:"FF4B4B6E"}};
 
   // Creative production
